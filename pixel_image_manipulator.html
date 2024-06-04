@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Image Manipulator</title>
+</head>
+<body>
+    <div class="section">
+        <h2>Pixel Image Manipulator</h2>
+        <h4>All your Pixel needs, in one tool! Pixelate Images with custom color palettes!</h4>
+        <img src="/images/pixel_image_manipulator/1.gif" class="showcase-image" style="width: 30%; height: auto;">
+        <div class="section">
+            <h2>Manipulate Images with additional functions!</h2>
+            <h3>Resize, combine, replace or remove colors in a click!</h3>
+            <ul>
+                <strong><li>Resize Images:</strong> Resize multiple images by specifying the percentage of resizing.</li>
+                <strong><li>Make Spritesheet:</strong> Combine multiple images into a single spritesheet.</li>
+                <strong><li>Replace Colors:</strong> Replace specific colors in images with new ones.</li>
+                <strong><li>Remove Color:</strong> Turns a specific color in images transparent.</li>
+                <strong><li>Pixelate:</strong> Pixelate images with customizable block size, saturation level, and palette selection.</li>
+            </ul>
+            <img src="/images/pixel_image_manipulator/2.png" class="showcase-image" style="width: 20%; height: auto; margin-left: 150px;">
+        </div>
+    </div>
+        <div class="section">
+        <h2>Runtime Analysis - Pixelate Method</h2>
+        <p>The application includes several image manipulation functions, but one of the most noteworthy is the <code>pixelate()</code> method.<br>
+            <br>The <code>pixelate()</code> method divides the image into blocks based on the specified size, computes the average color of each block, and replaces the pixels with the closest color from the palette. It also employs caching to optimize performance by reducing redundant computations during runtime.</p>
+    </div>
+    <div class="section">
+        <h2>Mathematical Evaluation</h2>
+        <p>Let:</p>
+        <ul style="font-size: 0.95em;">
+            <li>\( I_{\text{new}}(x,y) \) be the pixelated image pixel at coordinates \( (x,y) \).</li>
+            <li>\( I(x,y) \) be the original image pixel at coordinates \( (x,y) \).</li>
+            <li>\( I_{\text{avg}}(x,y) \) be the average color of the block at \( (x,y) \) in the original image.</li>
+            <li>\( P \) be the palette of colors for pixelation.</li>
+        </ul>
+        <p>The pixelation process is represented as:</p>
+        \[ I_{\text{new}}(x,y) = \begin{cases} 
+            \text{closest}(I_{\text{avg}}(x,y), P) & \text{if } (x,y) \text{ is within a block} \\
+            I(x,y) & \text{else} 
+        \end{cases} \]
+        <p>where \( I_{\text{avg}}(x,y) \) is the average color of the block containing pixel \( (x,y) \) and \( \text{closest}(c, P) \) is the closest color in palette \( P \) to color \( c \).</p>
+        
+        <h3>Caching</h3>
+        <p>Let:</p>
+        <ul style="font-size: 0.95em;">
+            <li>\( f \) be the result of the closest color computation, so that \(f=\text{closest}(I_{\text{avg}}(x,y), P)\).</li>
+            <li>\( M \) be the size of color palette \( P \).</li>
+        </ul>
+        <p>Then the worst-case time complexity of the closest color computation will be \( O(M) \) for any initial appearance of \(I_{\text{avg}}\) . However, with a caching system where the results of \(f\) are stored, then best case will be \(O(1) \) for all recurring appearances of \(I_{\text{avg}}\).</p>
+    </div>
+    <div class="section">
+        <h3>Runtime Analysis</h3>
+        <p>Let:</p>
+        <ul style="font-size: 0.95em;">
+            <li>\( X \) be the set of all horizontal coordinates \( x \) in the image.</li>
+            <li>\( Y \) be the set of all vertical coordinates \( y \) in the image.</li>
+            <li>\( N \) be the total number of pixels in the image, so that \(N=|X| \times |Y|\).</li>
+        </ul>
+        <p>Given \(x,y\) within a block, \(I_{\text{new}}(x,y) = f \), then all iterations will result in \(f \cdot N \), resulting in a worst-case of \(O(M) \cdot N = O(M \times N)\). This worst-case scenario accounts for computing the closest color for each block. In practice, because of the caching mechanism that avoids recomputation, most cases of \(M\) lead to \(O(M) \approx O(1)\).<br>Consequently, the runtime typically approaches \(O(1 \times N) = O(N)\).</p>
+        <br>
+    </div>
