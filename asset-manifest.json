@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my-portfolio/static/css/main.7ba8114e.css",
-    "main.js": "/my-portfolio/static/js/main.d82c3f96.js",
+    "main.js": "/my-portfolio/static/js/main.c660212e.js",
     "static/js/453.c9c35973.chunk.js": "/my-portfolio/static/js/453.c9c35973.chunk.js",
     "static/media/euler_thumbnail.png": "/my-portfolio/static/media/euler_thumbnail.59db84690ac97cc849a8.png",
     "static/media/swift_capture_thumbnail.png": "/my-portfolio/static/media/swift_capture_thumbnail.9965976542ceaa6ecf39.png",
@@ -10,6 +10,7 @@
     "static/media/cinema_crawler_thumbnail.png": "/my-portfolio/static/media/cinema_crawler_thumbnail.a224eb0b8a4ba0cdb3b0.png",
     "static/media/fishys_fued_thumbnail.png": "/my-portfolio/static/media/fishys_fued_thumbnail.0ac4b385bced05f026b5.png",
     "static/media/pixel_image_manipulator_thumbnail.png": "/my-portfolio/static/media/pixel_image_manipulator_thumbnail.4712c6bd9aeb79455132.png",
+    "static/media/network_analyzer_thumbnail.png": "/my-portfolio/static/media/network_analyzer_thumbnail.ebc991f218829876397f.png",
     "static/media/document_query_flask_thumbnail.png": "/my-portfolio/static/media/document_query_flask_thumbnail.7aa8515500cfe52bbf35.png",
     "static/media/arkanoid_thumbnail.png": "/my-portfolio/static/media/arkanoid_thumbnail.77206517876650ca803a.png",
     "static/media/pokemon_nuzlocke_narrator_thumbnail.png": "/my-portfolio/static/media/pokemon_nuzlocke_narrator_thumbnail.25d88c8a1fa58a7ea483.png",
@@ -19,11 +20,11 @@
     "static/media/repository.png": "/my-portfolio/static/media/repository.6fdc80f1a5d385046460.png",
     "index.html": "/my-portfolio/index.html",
     "main.7ba8114e.css.map": "/my-portfolio/static/css/main.7ba8114e.css.map",
-    "main.d82c3f96.js.map": "/my-portfolio/static/js/main.d82c3f96.js.map",
+    "main.c660212e.js.map": "/my-portfolio/static/js/main.c660212e.js.map",
     "453.c9c35973.chunk.js.map": "/my-portfolio/static/js/453.c9c35973.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7ba8114e.css",
-    "static/js/main.d82c3f96.js"
+    "static/js/main.c660212e.js"
   ]
 }
